@@ -6,7 +6,7 @@ pool:
 
 steps:
 - task: Maven@3
-    inputs:
+  inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
@@ -15,11 +15,11 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
     goals: 'package'
- - task: CopyFiles@2
-inputs:
+- task: CopyFiles@2
+  inputs:
     contents: 'target/*.jar'
     targetFolder: $(Build.ArtifactStagingDirectory)
- - task: PublishBuildArtifacts@1
-inputs:
+- task: PublishBuildArtifacts@1
+  inputs:
     pathToPublish: $(Build.ArtifactStagingDirectory)
     artifactName: drop
