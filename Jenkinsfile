@@ -15,12 +15,16 @@ pipeline {
         }
 
         stage('Package'){
-            steps {
+            
+        steps {
                 powershell 'mvn package'
-            }
-        }
+           }
+    
 
-        post {
+        }
+    }
+
+     post {
             always {
                 junit 'target/surefire-reports/TEST-*.xml'
             }
@@ -28,5 +32,4 @@ pipeline {
                 archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
             }
         }
-    }
 }
