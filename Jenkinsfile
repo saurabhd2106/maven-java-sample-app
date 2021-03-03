@@ -34,11 +34,7 @@ pipeline {
         stage('Deploy'){
             steps {
 
-                withEvn(['JENKINS_NODE_COOKIE=dontKillMe']) {
-
-                powershell 'java "-Dserver.port=8001" -jar target/spring-petclinic-2.3.1.BUILD-SNAPSHOT.jar'
-
-                }
+                powershell 'Start-job java "-Dserver.port=8001" -jar target/spring-petclinic-2.3.1.BUILD-SNAPSHOT.jar'
             }
         }
     }
