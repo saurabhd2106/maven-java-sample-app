@@ -27,14 +27,18 @@ pipeline {
             success {
                 archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
             }
-    }
+        }
         
         }
 
         stage('Deploy'){
             steps {
 
-                powershell 'Start-job java "-Dserver.port=8001" -jar target/spring-petclinic-2.3.1.BUILD-SNAPSHOT.jar'
+                withEnv(['JENKINS_NODE_COOKIE=dontKillMe']) {
+
+                powershell 'java "-Dserver.port=8001" -jar target/spring-petclinic-2.3.1.BUILD-SNAPSHOT.jar'
+
+                }
             }
         }
     }
