@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+     image 'wroquem/open-jdk:1.8'
+    }
+        
+    }
 
     stages {
         stage('Build'){
