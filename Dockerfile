@@ -1,4 +1,4 @@
-FROM wroquem/open-jdk:1.8
+FROM maven:3.8.5-openjdk-8
 COPY . /
 WORKDIR /
 RUN mvn clean
