@@ -14,9 +14,9 @@ pipeline {
             steps {
             script {
 
-                def mvn = tool 'Default Maven';
+               
              withSonarQubeEnv() {
-                sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=petclinic-via-plugin"
+                sh "mvn clean verify sonar:sonar -Dsonar.projectKey=petclinic-via-plugin"
                 }
 
             }
