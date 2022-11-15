@@ -15,6 +15,9 @@
   <name>petclinic</name>
 
   <properties>
+    
+    <sonar.organization>qatechhub</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 
     <!-- Generic properties -->
     <java.version>1.8</java.version>
