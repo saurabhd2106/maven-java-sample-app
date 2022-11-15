@@ -32,11 +32,11 @@ class PetclinicIntegrationTests {
 		vets.findAll();
 		vets.findAll(); // served from cache
 	}
-	
+
 	@Test
 	void testFindAllVets() throws Exception {
 		vets.findAll();
-		vets.findAll(); // served from cache
+		vets.findAll(); // served from cache here
 	}
 
 }
