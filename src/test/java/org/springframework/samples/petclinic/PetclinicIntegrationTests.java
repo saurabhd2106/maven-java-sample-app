@@ -38,4 +38,5 @@ class PetclinicIntegrationTests {
 		vets.findAll();
 		vets.findAll(); // served from cache
 	}
+
 }
