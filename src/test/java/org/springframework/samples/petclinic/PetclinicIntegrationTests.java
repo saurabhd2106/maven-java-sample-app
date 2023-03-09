@@ -33,4 +33,10 @@ class PetclinicIntegrationTests {
 		vets.findAll(); // served from cache as a test step
 	}
 
+	@Test
+	void testFindAll2ndMethod() throws Exception {
+		vets.findAll();
+		vets.findAll(); // served from cache
+	}
+
 }
