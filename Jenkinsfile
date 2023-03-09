@@ -26,7 +26,7 @@ pipeline {
         }
          stage('Publish Test Result') {
             steps {
-               junit "*/*/Test-*.xml"
+               junit "**/target/surefire-reports/TEST-*.xml"
             }
         }
         
