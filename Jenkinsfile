@@ -24,11 +24,7 @@ pipeline {
         
             }
         }
-         stage('Publish Test Result') {
-            steps {
-               junit "**/target/surefire-reports/TEST-*.xml"
-            }
-        }
+         
         
 
        stage('Quality Gate') {
@@ -36,5 +32,17 @@ pipeline {
                waitForQualityGate abortPipeline: true
            }
        }
+        
+        post {
+  always {
+    // One or more steps need to be included within each condition's block.
+      
+      steps {
+               junit "**/target/surefire-reports/TEST-*.xml"
+            }
+  }
+}
+        
+       
     }
 }
