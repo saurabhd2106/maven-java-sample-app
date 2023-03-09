@@ -30,15 +30,7 @@ pipeline {
                waitForQualityGate abortPipeline: true
            }
 
-           post {
-                always {
-                // One or more steps need to be included within each condition's block.
-      
-                    steps {
-                            junit "**/target/surefire-reports/TEST-*.xml"
-                            }
-                }
-            }
+          
        }
 
        
