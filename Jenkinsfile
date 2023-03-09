@@ -24,25 +24,23 @@ pipeline {
         
             }
         }
-         
-        
 
        stage('Quality Gate') {
            steps {
                waitForQualityGate abortPipeline: true
            }
-       }
-        
-        post {
-  always {
-    // One or more steps need to be included within each condition's block.
+
+           post {
+                always {
+                // One or more steps need to be included within each condition's block.
       
-      steps {
-               junit "**/target/surefire-reports/TEST-*.xml"
+                    steps {
+                            junit "**/target/surefire-reports/TEST-*.xml"
+                            }
+                }
             }
-  }
-}
-        
+       }
+
        
     }
 }
